@@ -1,0 +1,43 @@
+﻿@model UserİnfoDto
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<div class="container">
+    <br /> <br>
+
+    <h3>Token Olusturma Ekrani</h3>
+
+    <form method="post">
+
+        <label> Adiniz</label>
+        <input type="text" asp-for="Name" class="form-control" />
+        <br />
+
+        <label> Soyadi</label>
+        <input type="text" asp-for="Surname" class="form-control" />
+        <br />
+
+        <label> Rol</label>
+        <input type="text" asp-for="Role" class="form-control" />
+        <br />
+
+        <label> Sehriniz</label>
+        <input type="text" asp-for="City" class="form-control" />
+        <br />
+
+        <button class="btn btn-warning">olustur</button>
+    </form>
+
+
+    @if (!string.IsNullOrEmpty(Model?.Token))
+    {
+        <div class="alert alertalert-success mt-3">
+            <strong>Token:</strong> <br />
+            <textarea rows="5" class="form-control">@Model.Token</textarea>
+        </div>
+    }
+
+
+</div>
